@@ -36,5 +36,9 @@ module "docdb" {
   skip_final_snapshot     = each.value["skip_final_snapshot"]
   vpc_id                  = vpc_id
   sg_ingress_cidr         = local.app_subnets_cidr
+  engine_version          = each.value["engine_version"]
+  engine_family           = each.value["engine_family"]
+  instance_class          = each.value["instance_class"]
+  instance_count          = each.value["instance_count"]
 }
 
